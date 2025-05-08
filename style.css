@@ -1,0 +1,77 @@
+/*
+Theme Name: Mio Tema NeroBianco
+Theme URI: https://fabiosalvagno.com/
+Author: Fabio Salvagno
+Description: Un tema minimalista con sfondo nero e testo bianco.
+Version: 1.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: il-mio-nuovo-tema
+*/
+
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    padding: 2rem;
+  }
+
+  nav {
+    background-color: black;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+  }
+  
+  .menu li {
+    display: inline;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .menu a:hover {
+    text-decoration: underline;
+  }
+  
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  article {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #111; /* leggero contrasto */
+    border-radius: 8px;
+  }
+  
+  h2 {
+    color: #ffcc00;
+  }
+  
+  a {
+    color: #00ffff;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  article {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
