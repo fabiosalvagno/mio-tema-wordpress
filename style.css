@@ -13,7 +13,8 @@ body {
     background-color: black;
     color: white;
     font-family: sans-serif;
-    padding: 2rem;
+    margin: 0;
+    padding: 0;
   }
 
  
@@ -21,9 +22,12 @@ body {
   .menu {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin: 0;
     padding: 0;
   }
+  
   
   .menu li {
     display: inline;
@@ -40,9 +44,11 @@ body {
   }
   
   main {
-    max-width: 800px;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
   }
+  
   
   article {
     margin-bottom: 2rem;
@@ -81,7 +87,9 @@ body {
   nav {
     width: 100%;
     background-color: black;
-    padding: 1rem;
+    padding-top: 5px;
+    padding-bottom: 16px; /* oppure 1rem */
     margin: 0;
   }
+  
   

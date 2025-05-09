@@ -6,9 +6,15 @@ function mio_tema_carica_traduzioni() {
 add_action( 'after_setup_theme', 'mio_tema_carica_traduzioni' );
 
 function mio_tema_carica_stili() {
-  wp_enqueue_style('stile-principale', get_stylesheet_uri());
+  wp_enqueue_style(
+      'tailwind',
+      get_template_directory_uri() . '/dist/style.css',
+      [],
+      filemtime( get_template_directory() . '/dist/style.css' )
+  );
 }
-add_action('wp_enqueue_scripts', 'mio_tema_carica_stili');
+add_action( 'wp_enqueue_scripts', 'mio_tema_carica_stili' );
+
 
 // ✅ Registra il menu
 function mio_tema_registra_menu() {
@@ -32,7 +38,7 @@ add_action( 'widgets_init', 'mio_tema_register_sidebars' );
 function mio_tema_supporto_header() {
   add_theme_support( 'custom-header', array(
       'width'         => 1920,
-      'height'        => 600,
+      'height'        => 300,
       'flex-height'   => true,
       'flex-width'    => true,
       'header-text'   => false,

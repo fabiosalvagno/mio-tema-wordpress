@@ -14,6 +14,8 @@
   </div>
 <?php endif; ?>
 
+<h1 class="text-3xl text-yellow-300 font-bold">Funziona Tailwind!</h1>
+
 
   <?php
     wp_nav_menu(array(

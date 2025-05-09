@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Forza l'inclusione di alcune classi */
+@layer utilities {
+    .text-3xl {}
+    .text-white {}
+    .bg-black {}
+    .font-bold {}
+    .text-yellow-300 {}
+  }
