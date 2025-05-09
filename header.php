@@ -8,9 +8,12 @@
 </head>
 <body <?php body_class(); ?>>
 <nav>
-<div class="hero-image">
-  <img src="<?php echo get_template_directory_uri(); ?>/img/hero.jpg" alt="Immagine di copertina">
-</div>
+<?php if ( get_header_image() ) : ?>
+  <div class="hero-image">
+    <img src="<?php header_image(); ?>" alt="Header">
+  </div>
+<?php endif; ?>
+
 
   <?php
     wp_nav_menu(array(

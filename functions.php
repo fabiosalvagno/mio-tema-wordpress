@@ -28,3 +28,14 @@ function mio_tema_register_sidebars() {
   ));
 }
 add_action( 'widgets_init', 'mio_tema_register_sidebars' );
+
+function mio_tema_supporto_header() {
+  add_theme_support( 'custom-header', array(
+      'width'         => 1920,
+      'height'        => 600,
+      'flex-height'   => true,
+      'flex-width'    => true,
+      'header-text'   => false,
+  ) );
+}
+add_action( 'after_setup_theme', 'mio_tema_supporto_header' );
