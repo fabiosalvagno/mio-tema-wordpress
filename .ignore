@@ -1,0 +1,17 @@
+# Ignora tutti i file .zip
+*.zip
+
+# Altri file temporanei/comuni da ignorare
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# File di backup degli editor
+*~
+*.swp
+
+# Cartelle di editor
+.vscode/
+.idea/
