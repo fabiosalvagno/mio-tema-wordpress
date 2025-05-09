@@ -1,4 +1,10 @@
 <?php
+
+function mio_tema_carica_traduzioni() {
+  load_theme_textdomain( 'il-mio-tema', get_template_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'mio_tema_carica_traduzioni' );
+
 function mio_tema_carica_stili() {
   wp_enqueue_style('stile-principale', get_stylesheet_uri());
 }
