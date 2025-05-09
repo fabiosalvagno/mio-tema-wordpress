@@ -9,6 +9,8 @@
           <div>
             <?php the_content(); ?>
           </div>
+          <?php get_sidebar(); ?>
+
         </article>
       <?php endwhile;
     else :
