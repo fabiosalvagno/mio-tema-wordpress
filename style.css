@@ -16,12 +16,7 @@ body {
     padding: 2rem;
   }
 
-  nav {
-    background-color: black;
-    padding: 1rem;
-    text-align: center;
-  }
-  
+ 
 
   .menu {
     list-style: none;
@@ -73,5 +68,20 @@ body {
     padding: 2rem;
     border-radius: 8px;
     margin-bottom: 2rem;
+  }
+  
+  .hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    width: 100%;
+    background-color: black;
+    padding: 1rem;
+    margin: 0;
   }
   

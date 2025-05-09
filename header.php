@@ -8,6 +8,10 @@
 </head>
 <body <?php body_class(); ?>>
 <nav>
+<div class="hero-image">
+  <img src="<?php echo get_template_directory_uri(); ?>/img/hero.jpg" alt="Immagine di copertina">
+</div>
+
   <?php
     wp_nav_menu(array(
       'theme_location' => 'menu-principale',
