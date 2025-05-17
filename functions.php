@@ -1,47 +1,42 @@
 <?php
 
+// 🔁 Carica le traduzioni (opzionale)
 function mio_tema_carica_traduzioni() {
-  load_theme_textdomain( 'il-mio-tema', get_template_directory() . '/languages' );
+  load_theme_textdomain('il-mio-tema', get_template_directory() . '/languages');
 }
-add_action( 'after_setup_theme', 'mio_tema_carica_traduzioni' );
+add_action('after_setup_theme', 'mio_tema_carica_traduzioni');
 
+// 🎨 Carica lo stile compilato da Tailwind
 function mio_tema_carica_stili() {
   wp_enqueue_style(
-      'tailwind',
-      get_template_directory_uri() . '/dist/style.css',
-      [],
-      filemtime( get_template_directory() . '/dist/style.css' )
+    'tailwind',
+    get_template_directory_uri() . '/dist/style.css',
+    [],
+    filemtime(get_template_directory() . '/dist/style.css')
   );
 }
-add_action( 'wp_enqueue_scripts', 'mio_tema_carica_stili' );
+add_action('wp_enqueue_scripts', 'mio_tema_carica_stili');
 
-
-// ✅ Registra il menu
+// 📋 Registra il menu
 function mio_tema_registra_menu() {
   register_nav_menu('menu-principale', __('Menu Principale'));
 }
 add_action('after_setup_theme', 'mio_tema_registra_menu');
 
-function mio_tema_register_sidebars() {
-  register_sidebar( array(
-      'name'          => 'Barra Laterale Principale',
-      'id'            => 'barra-laterale-principale',
-      'description'   => 'Appare sul lato del sito, se attivata.',
-      'before_widget' => '<div class="widget %2$s">',
-      'after_widget'  => '</div>',
-      'before_title'  => '<h3 class="widget-title">',
-      'after_title'   => '</h3>',
-  ));
+// 🎯 Aggiungi classi Tailwind ai <li>
+function mio_tema_menu_li_class($classes, $item, $args) {
+  if ($args->theme_location === 'menu-principale') {
+    $classes[] = 'hover:opacity-70 transition-opacity duration-300';
+  }
+  return $classes;
 }
-add_action( 'widgets_init', 'mio_tema_register_sidebars' );
+add_filter('nav_menu_css_class', 'mio_tema_menu_li_class', 10, 3);
 
-function mio_tema_supporto_header() {
-  add_theme_support( 'custom-header', array(
-      'width'         => 1920,
-      'height'        => 300,
-      'flex-height'   => true,
-      'flex-width'    => true,
-      'header-text'   => false,
-  ) );
+// 💡 Aggiungi classi ai link <a>
+function mio_tema_menu_link_attributes($atts, $item, $args, $depth) {
+  if ($args->theme_location === 'menu-principale') {
+    $atts['class'] = 'block px-2 py-1';
+  }
+  return $atts;
 }
-add_action( 'after_setup_theme', 'mio_tema_supporto_header' );
+add_filter('nav_menu_link_attributes', 'mio_tema_menu_link_attributes', 10, 4);

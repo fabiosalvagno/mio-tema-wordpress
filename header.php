@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php bloginfo( 'name' ); ?></title>
+  <title><?php wp_title('|', true, 'right'); ?></title>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<nav>
-<?php if ( get_header_image() ) : ?>
-  <div class="hero-image">
-    <img src="<?php header_image(); ?>" alt="Header">
+
+<!-- Header -->
+<header class="bg-[#1a1a1a] text-white shadow-md sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="text-xl font-bold">
+      <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+    </div>
+    
+    <!-- Menu -->
+    <?php
+      wp_nav_menu(array(
+        'theme_location' => 'menu-principale',
+        'container' => false,
+        'menu_class' => 'flex space-x-6 text-base font-medium',
+      ));
+    ?>
   </div>
-<?php endif; ?>
-
-<h1 class="text-3xl text-yellow-300 font-bold">Funziona Tailwind!</h1>
-
-
-  <?php
-    wp_nav_menu(array(
-      'theme_location' => 'menu-principale',
-      'container' => false,
-      'menu_class' => 'menu'
-    ));
-  ?>
-</nav>
-
-
-  <h1><?php bloginfo( 'name' ); ?></h1>
-  <p><?php bloginfo( 'description' ); ?></p>
+</header>
